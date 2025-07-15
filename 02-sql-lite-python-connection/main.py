@@ -4,6 +4,7 @@ import sqlite3
 # your file bath where you want to create a db
 connection = sqlite3.connect(r"D:\huzair\coding\learn-sql-lite\02-sql-lite-python-connection\connection.db")
 
+# create a cursor to interact with database
 cursor = connection.cursor()
 
 create_query = "create table employees (id,name,position,salary)"
@@ -13,6 +14,8 @@ insert_query = "insert into employees (id,name,position,salary) values(1,'Huzair
 select_query = "select * from employees"
 
 cursor.execute(insert_query)
+
+# it saves the data after insertion (updates db)
 connection.commit()
 
 
