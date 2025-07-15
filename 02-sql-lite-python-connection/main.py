@@ -13,12 +13,21 @@ insert_query = "insert into employees (id,name,position,salary) values(1,'Huzair
 
 select_query = "select * from employees"
 
-cursor.execute(insert_query)
+delete_query = "delete from employees where id = 2"
+# cursor.execute(insert_query)
 
 # it saves the data after insertion (updates db)
+
+cursor.execute(insert_query)
 connection.commit()
 
-
 cursor.execute(select_query)
+# this will return all tables in a list of tuples
+# print(cursor.fetchall())
 
-print(cursor.fetchall())
+# looping thorugh data (list of tuples)
+
+data = cursor.fetchall()
+
+for name in data:
+    print(name[1])
