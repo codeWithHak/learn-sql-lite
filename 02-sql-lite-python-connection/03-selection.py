@@ -15,3 +15,6 @@ cursor.execute(select_query)
 
 # save changes in db 
 connection.commit()
+
+# gets all the columns in an array of tuples
+print(cursor.fetchall())

@@ -8,7 +8,6 @@ connection = sqlite3.connect(r"D:\huzair\coding\learn-sql-lite\02-sql-lite-pytho
 cursor = connection.cursor()
 
 # query to create table
-
 create_query = "create table employees (id integer primary key autoincrement, name text, position text, salary integer)"
 
 cursor.execute(create_query)

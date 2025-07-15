@@ -8,23 +8,20 @@ connection = sqlite3.connect(r"D:\huzair\coding\learn-sql-lite\02-sql-lite-pytho
 cursor = connection.cursor()
 
 # query to create table
-create_query = "create table employees (id,name,position,salary)"
+update_query = "update employees set name='Amir', position='CEO', salary=100000"
 
-# query to insert data
-insert_query = "insert into employees (id,name,position,salary) values(1,'Huzair','Intern',20000), (2,'Nasir','Intern',20000)"
-
-# query to get data
 select_query = "select * from employees"
 
 
 
-
 # executing querry
-cursor.execute(insert_query)
+cursor.execute(update_query)
+
 # it saves the data after insertion (updates db)
 connection.commit()
 
+# execute select query to see data
 cursor.execute(select_query)
-print(cursor.fetchall())
+
 # this will return all tables in a list of tuples
-# print(cursor.fetchall())
+print(cursor.fetchall())
