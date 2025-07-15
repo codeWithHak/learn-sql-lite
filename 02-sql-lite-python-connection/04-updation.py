@@ -25,32 +25,6 @@ cursor.execute(insert_query)
 connection.commit()
 
 cursor.execute(select_query)
-
+print(cursor.fetchall())
 # this will return all tables in a list of tuples
 # print(cursor.fetchall())
-
-
-# looping thorugh data (list of tuples)
-data = cursor.fetchall()
-
-for name in data:
-    print(name[1])
-
-
-
-
-
-
-
-# -------------- More Queries --------------------
-
-
-
-# query to delete table
-delete_table_query = "drop table employees"
-
-# query to delete data
-delete_data_query = "delete from employees where id = 2"
-
-# query to delete data
-delete_column_query = "delete from employees where id = 2"
